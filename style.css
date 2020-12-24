@@ -27,7 +27,8 @@
 body {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 768px;
+  max-height: 100vh;
   height: 100%;
   font-family: 'Barlow Semi Condensed', sans-serif;
   display: -webkit-box;
@@ -44,15 +45,18 @@ body {
 
 .body-bg {
   position: absolute;
+  z-index: -2;
   top: -100%;
   width: 100%;
   height: 200%;
+  background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
 }
 
 .design {
   position: absolute;
   top: 0;
   opacity: .8;
+  display: none;
 }
 
 header {
@@ -112,5 +116,131 @@ header .score .score_js {
   margin-top: -.3rem;
   font-size: 4rem;
   color: #3b4363;
+}
+
+main {
+  visibility: hidden;
+}
+
+main img {
+  position: relative;
+  margin-top: 10rem;
+  z-index: -2;
+}
+
+.game {
+  position: absolute;
+  top: 16.3rem;
+  left: 27.7rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 9in;
+  -webkit-box-shadow: 0 10px 0px 0px #263fc0;
+          box-shadow: 0 10px 0px 0px #263fc0;
+  border: 20px solid #405ce7;
+}
+
+.game .ring-bg {
+  position: absolute;
+  top: -5px;
+  width: 170px;
+  height: 170px;
+  background-color: white;
+  z-index: -2;
+  border-radius: 9in;
+  -webkit-box-shadow: inset -5px 16px 0px 0px #d6d4d4;
+          box-shadow: inset -5px 16px 0px 0px #d6d4d4;
+}
+
+.game .center {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/icon-paper.svg");
+  background-repeat: no-repeat;
+  background-size: 42%;
+  background-position: center;
+}
+
+.scissors {
+  left: 45.2rem;
+  -webkit-box-shadow: 0 10px 0px 0px #aa7208;
+          box-shadow: 0 10px 0px 0px #aa7208;
+  border: 20px solid #ec9e0e;
+}
+
+.scissors .center {
+  background-image: url("./images/icon-scissors.svg");
+}
+
+.rock {
+  top: 30.5rem;
+  left: 36.45rem;
+  -webkit-box-shadow: 0 10px 0px 0px #a6112d;
+          box-shadow: 0 10px 0px 0px #a6112d;
+  border: 20px solid #dc2e4e;
+}
+
+.rock .center {
+  background-image: url("./images/icon-rock.svg");
+}
+
+.choose {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.choose .my, .choose .computer {
+  position: absolute;
+  top: 25rem;
+  left: 23.8rem;
+  border-radius: 9in;
+  width: 225px;
+  height: 225px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -2;
+}
+
+.choose .my .choose_h, .choose .computer .choose_h {
+  position: absolute;
+  top: -8.5rem;
+  left: 2rem;
+  z-index: 2;
+  color: white;
+  width: 10rem;
+}
+
+.choose .my .game, .choose .computer .game {
+  width: 290px;
+  height: 290px;
+  top: -2rem;
+  left: -2rem;
+  border-width: 30px;
+}
+
+.choose .my .game .ring-bg, .choose .computer .game .ring-bg {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 255px;
+  height: 255px;
+  -webkit-box-shadow: inset -5px 20px 0px 0px #d6d4d4;
+          box-shadow: inset -5px 20px 0px 0px #d6d4d4;
+}
+
+.choose .my .game .center, .choose .computer .game .center {
+  background-size: 47%;
+}
+
+.choose .computer {
+  left: 47rem;
+}
+
+.choose .computer .choose_h {
+  top: -8.5rem;
+  left: -1rem;
+  width: 16rem;
 }
 /*# sourceMappingURL=style.css.map */

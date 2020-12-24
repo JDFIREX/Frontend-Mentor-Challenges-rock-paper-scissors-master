@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="body-bg"></div>
-  <img class="design" src="./design/original/desktop-step-1.jpg" alt="">
+  <img class="design" src="./design/original/desktop-step-2.jpg" alt="">
 
   <header>
     <img src="./images/logo.svg" alt="logo">
@@ -25,20 +25,37 @@
 
   <main>
     <img src="./images/bg-triangle.svg" alt="triangle">
-    <div class="paper game">
+    <div class="paper game" data-pic="paper">
       <div class="ring-bg"></div>
-      <div class="shadow"></div>
       <div class="center"></div>
-      <div class="choose"></div>
-      <div class="ring-front"></div>
+    </div>
+    <div class="scissors game" data-pic="scissors">
+      <div class="ring-bg"></div>
+      <div class="center"></div>
+    </div>
+    <div class="rock game" data-pic="rock">
+      <div class="ring-bg"></div>
+      <div class="center"></div>
     </div>
   </main>
-  
+
+  <div class="choose">
+    <div class="my">
+      <h1 class="choose_h">YOU PICKED</h1>
+    </div>
+    <div class="computer">
+      <h1 class="choose_h">THE HOUSE PICKED</h1>
+    </div>
+  </div>
+
+
   <div  class ="atrribution_div">
     <p class="attribution">
       Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a rel="noopener" href="https://www.frontendmentor.io/profile/JDFIREX" target="_blank">Jonatan Dajtrowski</a>.
     </p>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
