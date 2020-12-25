@@ -7,24 +7,24 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <link rel="stylesheet" href="style.css">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
 <body>
   <div class="body-bg"></div>
-  <img class="design" src="./design/original/desktop-step-2.jpg" alt="">
+  <img class="design" src="./design/original/desktop-step-4-win.jpg" alt="">
 
   <header>
     <img src="./images/logo.svg" alt="logo">
     <div class="score">
       <p class="score_p">Score</p>
-      <p class="score_js">12</p>
+      <p class="score_js">0</p>
     </div>
   </header>
 
-  <main>
-    <img src="./images/bg-triangle.svg" alt="triangle">
+  <main class="main">
+    <img class="main_img" src="./images/bg-triangle.svg" alt="triangle">
     <div class="paper game" data-pic="paper">
       <div class="ring-bg"></div>
       <div class="center"></div>
@@ -42,9 +42,22 @@
   <div class="choose">
     <div class="my">
       <h1 class="choose_h">YOU PICKED</h1>
+      <!-- <div class="paper game" data-pic="paper">
+        <div class="ring-bg"></div>
+        <div class="center"></div>
+      </div> -->
+    </div>
+    
+    <div class="finish">
+      <h1 class="finish_h">YOU WIN</h1>
+      <button class="finish_btn" onclick="playAgain()">PLAY AGAIN</button>
     </div>
     <div class="computer">
       <h1 class="choose_h">THE HOUSE PICKED</h1>
+      <!-- <div class="rock game" data-pic="rock">
+        <div class="ring-bg"></div>
+        <div class="center"></div>
+      </div> -->
     </div>
   </div>
 

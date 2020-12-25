@@ -21,6 +21,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 .body-bg{
     position: absolute;
@@ -77,8 +78,11 @@ header{
         }
     }
 }
+
+
 main{
-    visibility: hidden;
+    // visibility: hidden;
+    transform: scale(1);
     img{
         position: relative;
         margin-top: 10rem;
@@ -88,36 +92,41 @@ main{
 
 .game{
     position: absolute;
-    top: 16.3rem;
-    left: 27.7rem;
+    top: 4rem;
+    left: -5.5rem;
     width: 200px;
     height: 200px;
     border-radius: 9in;
     box-shadow: 0 10px 0px 0px hsl(230, 67%, 45%);
     border: 20px solid hsl(230, 78%, 58%);
+    transform: scale(1);
+    transition: all .3 ease-in-out;
 
     .ring-bg{
-        position: absolute; top: -5px;
-        width: 170px;
-        height: 170px;
+        position: absolute; top: 0px;
+        width: 160px;
+        height: 160px;
         background-color: white;
         z-index: -2;
         border-radius: 9in;
-        box-shadow: inset -5px 16px 0px 0px rgb(214, 212, 212);
+        box-shadow: inset 0px 16px 0px 0px rgb(214, 212, 212);
     }
     .center{
         position: relative;
+        top: -20px;
+        left: -20px;
         z-index: 2;
-        width: 100%;
-        height: 100%;
+        width: 200px;
+        height: 210px;
         background-image: url("./images/icon-paper.svg");
         background-repeat: no-repeat;
-        background-size: 42%;
+        background-size: 38%;
+        border-radius: 9in;
         background-position: center;
     }
 }
 .scissors{
-    left: 45.2rem;
+    left: 11.8rem;
     box-shadow: 0 10px 0px 0px hsl(39, 91%, 35%);
     border: 20px solid hsl(39, 89%, 49%);
     .center{
@@ -125,31 +134,36 @@ main{
     }
 }
 .rock{
-    top: 30.5rem;
-    left: 36.45rem;
+    top: 18rem;
+    left: 3.4rem;
     box-shadow: 0 10px 0px 0px hsl(349, 81%, 36%);
     border: 20px solid hsl(349, 71%, 52%);
     .center{
         background-image: url("./images/icon-rock.svg");
     }
-    }
+}
 
 
 .choose{
-    // visibility: hidden;
+    visibility: hidden;
     position: absolute;
-    top: 0; left: 0;
-
-
+    width: 100%;
+    height: auto;
+    padding: 1rem 28vw; // 28vw 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 23.8rem; left: 0;
 
     .my,.computer{
-        position: absolute;
-        top: 25rem;
-        left: 23.8rem; // 47
+        position: relative;
+        top: 0rem;
+        left: 0vw; // 47
         border-radius: 9in;
         width: 225px; height: 225px;
         background-color: rgba(0, 0, 0, 0.2);
         z-index: -2;
+        transition: all .3 ease-in-out;
 
         .choose_h{
             position: absolute;
@@ -167,23 +181,299 @@ main{
             border-width: 30px;
         
             .ring-bg{
-                position: absolute; top: -5px; left: -5px;
-                width: 255px;
-                height: 255px;
+                position: absolute; top: 0px; left: 0px;
+                width: 230px;
+                height: 230px;
                 box-shadow: inset -5px 20px 0px 0px rgb(214, 212, 212);
             }
             .center{
+                top: 2px;left: 2px;
+                width: 225px;height: 225px;
                 background-size: 47%;
             }
         }
     }
     .computer{
-        left: 47rem;
+        left: -.7rem;
 
         .choose_h{
             top: -8.5rem;
             left: -1rem;
             width :16rem;
+        }
+    }
+}
+.choose{
+    transition: all .3 ease-in-out;
+    .finish{
+        display: none;
+        transition: all .3 ease-in-out;
+        position: relative;
+        text-align: center;
+        top: 0rem;
+        left: 0;
+        z-index: -2;
+        color: white;
+        width: auto;
+        text-align: center;
+        h1{
+            font-size: 3.5rem;
+            margin-bottom: .8rem;
+        }
+        button{
+            outline: none;
+            text-decoration: none;
+            border: none;
+            background-color: white;
+            border-radius: .5rem;
+            color : hsl(229, 64%, 46%);
+            width: 14rem;
+            height: 3rem;
+        }
+    }
+    .win{
+        transition: all .3s ease-in-out;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 9in;
+            box-shadow: 0px 0px 80px 40px #606e85;
+        }
+    }
+}
+@media only screen and (max-width: 750px){
+    header{
+        width: 90vw;
+        img{
+            height: 80%;
+        }
+        .score{
+            width: 20vw;
+            height: 15vw;
+            p{
+                font-size: 2vw;
+            }
+            .score_js{
+                font-size: 8vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    header{
+        width: 90vw;
+        height: 8rem;
+        img{
+            height: 80%;
+        }
+        .score{
+            position: relative;
+            width: 23vw;
+            height: 100%;
+            p{
+                font-size:2.6vw;
+            }
+            .score_js{
+                position: absolute;
+                bottom: 5vw;
+                font-size: 8vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 750px){
+    main{
+        img{
+            position: relative;
+            margin-top: 25vw;
+            width: 50vw;
+        }
+    }
+    .game{
+        left: -15vw;
+        width: 30vw;
+        height: 30vw;
+        box-shadow: 0 8px 0px 0px hsl(230, 67%, 45%);
+        .ring-bg{
+            top: -.5vw;
+            left: -.5vw;
+            width: 25vw;
+            height: 25vw;
+            box-shadow: inset 0px 13px 0px 0px rgb(214, 212, 212);
+        }
+        .center{
+            top: -2.5vw;
+            left: -2.5vw;
+            width: 30vw;
+            height: 30vw;
+            background-size: 35%;
+        }
+    }
+    .scissors{
+        left: 37vw;
+        box-shadow: 0 8px 0px 0px hsl(39, 91%, 35%);
+    }
+    .rock{
+        top: 53vw;
+        left: 11vw;
+        box-shadow: 0 8px 0px 0px hsl(349, 81%, 36%);
+    }
+}
+@media only screen and (max-width: 400px){
+    main{
+        img{
+            margin-top: 30vw;
+        }
+    }
+    .game{
+        .ring-bg{
+            box-shadow: inset 0px 10px 0px 0px rgb(214, 212, 212);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .game{
+        border-width: 4vw;
+        .ring-bg{
+            top: -.25vw;
+            left: -.25vw;
+            width: 22.5vw;
+            height: 22.5vw;
+        }
+        .center{
+            top: 0vw;
+            left: 0vw;
+            width: 22.5vw;
+            height: 22.5vw;
+            background-size: 45%;
+        }
+    }
+}
+@media only screen and (max-width: 1200px){
+    .choose{
+        padding: 1rem 18vw; // 28vw 
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .choose{
+        padding: 1rem 18vw;
+        .my,.computer{
+            width: 21.5vw; height: 21.5vw;
+            .choose_h{
+                position: absolute;
+                top: -8.5rem;
+                left: 0rem;
+                z-index: 2;
+                font-size: 4vw;
+                color: white;
+                width :35vw;
+            }
+            .game{
+                width: 30vw; height: 30vw;
+                top: -5vw;
+                left: -5vw;
+                border-width: 3vw;
+            
+                .ring-bg{
+                    position: absolute; top: 0vw; left: 0vw;
+                    width:24.2vw;
+                    height: 24.2vw;
+                    box-shadow: inset 0px 14px 0px 0px rgb(214, 212, 212);
+                }
+                .center{
+                    top: 0vw;left: 0vw;
+                    width: 24vw;height: 24vw;
+                    background-size: 45%;
+                }
+            }
+        }
+        .computer{
+            .choose_h{
+                top: -8.5rem;
+                left: -5vw;
+            }
+        }
+    }
+    .choose{
+        .finish{
+            h1{
+                font-size:6vw;
+            }
+            button{
+                width: 20vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 700px){
+    .choose{
+        top: 18rem;
+        .my,.computer{
+            .choose_h{
+                top: -5rem;
+            }
+        }
+        .computer{
+            .choose_h{
+                top: -5rem;
+            }
+        }
+    }
+    .choose{
+        .finish{
+            position: absolute;
+            top: 35vw;
+            left: 30vw;
+            width: 40vw;
+            h1{
+                font-size: 7vw;
+            }
+            button{
+                width: 35vw;
+                height: 3rem;
+            }
+        }
+        .win{
+            transition: all .3s ease-in-out;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 9in;
+                box-shadow: 0px 0px 10vw 3vw #606e85;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .choose{
+        .my,.computer{
+            transform: scale(1.1);
+            .game{
+            
+                .ring-bg{
+                    position: absolute; top: -.25vw; left: -.25vw;
+                    width:24.5vw;
+                    height: 24.5vw;
+                    box-shadow: inset 0px 10px 0px 0px rgb(214, 212, 212);
+                }
+                .center{
+                    top: 0vw;left: 0vw;
+                    width: 24vw;height: 24vw;
+                    background-size: 45%;
+                }
+            }
+        }
+    }
+    .choose{
+        .finish{
+            top: 40vw;
         }
     }
 }

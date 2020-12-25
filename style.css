@@ -41,6 +41,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .body-bg {
@@ -119,7 +120,8 @@ header .score .score_js {
 }
 
 main {
-  visibility: hidden;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 main img {
@@ -130,41 +132,48 @@ main img {
 
 .game {
   position: absolute;
-  top: 16.3rem;
-  left: 27.7rem;
+  top: 4rem;
+  left: -5.5rem;
   width: 200px;
   height: 200px;
   border-radius: 9in;
   -webkit-box-shadow: 0 10px 0px 0px #263fc0;
           box-shadow: 0 10px 0px 0px #263fc0;
   border: 20px solid #405ce7;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .3 ease-in-out;
+  transition: all .3 ease-in-out;
 }
 
 .game .ring-bg {
   position: absolute;
-  top: -5px;
-  width: 170px;
-  height: 170px;
+  top: 0px;
+  width: 160px;
+  height: 160px;
   background-color: white;
   z-index: -2;
   border-radius: 9in;
-  -webkit-box-shadow: inset -5px 16px 0px 0px #d6d4d4;
-          box-shadow: inset -5px 16px 0px 0px #d6d4d4;
+  -webkit-box-shadow: inset 0px 16px 0px 0px #d6d4d4;
+          box-shadow: inset 0px 16px 0px 0px #d6d4d4;
 }
 
 .game .center {
   position: relative;
+  top: -20px;
+  left: -20px;
   z-index: 2;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 210px;
   background-image: url("./images/icon-paper.svg");
   background-repeat: no-repeat;
-  background-size: 42%;
+  background-size: 38%;
+  border-radius: 9in;
   background-position: center;
 }
 
 .scissors {
-  left: 45.2rem;
+  left: 11.8rem;
   -webkit-box-shadow: 0 10px 0px 0px #aa7208;
           box-shadow: 0 10px 0px 0px #aa7208;
   border: 20px solid #ec9e0e;
@@ -175,8 +184,8 @@ main img {
 }
 
 .rock {
-  top: 30.5rem;
-  left: 36.45rem;
+  top: 18rem;
+  left: 3.4rem;
   -webkit-box-shadow: 0 10px 0px 0px #a6112d;
           box-shadow: 0 10px 0px 0px #a6112d;
   border: 20px solid #dc2e4e;
@@ -187,20 +196,36 @@ main img {
 }
 
 .choose {
+  visibility: hidden;
   position: absolute;
-  top: 0;
+  width: 100%;
+  height: auto;
+  padding: 1rem 28vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 23.8rem;
   left: 0;
 }
 
 .choose .my, .choose .computer {
-  position: absolute;
-  top: 25rem;
-  left: 23.8rem;
+  position: relative;
+  top: 0rem;
+  left: 0vw;
   border-radius: 9in;
   width: 225px;
   height: 225px;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: -2;
+  -webkit-transition: all .3 ease-in-out;
+  transition: all .3 ease-in-out;
 }
 
 .choose .my .choose_h, .choose .computer .choose_h {
@@ -222,25 +247,313 @@ main img {
 
 .choose .my .game .ring-bg, .choose .computer .game .ring-bg {
   position: absolute;
-  top: -5px;
-  left: -5px;
-  width: 255px;
-  height: 255px;
+  top: 0px;
+  left: 0px;
+  width: 230px;
+  height: 230px;
   -webkit-box-shadow: inset -5px 20px 0px 0px #d6d4d4;
           box-shadow: inset -5px 20px 0px 0px #d6d4d4;
 }
 
 .choose .my .game .center, .choose .computer .game .center {
+  top: 2px;
+  left: 2px;
+  width: 225px;
+  height: 225px;
   background-size: 47%;
 }
 
 .choose .computer {
-  left: 47rem;
+  left: -.7rem;
 }
 
 .choose .computer .choose_h {
   top: -8.5rem;
   left: -1rem;
   width: 16rem;
+}
+
+.choose {
+  -webkit-transition: all .3 ease-in-out;
+  transition: all .3 ease-in-out;
+}
+
+.choose .finish {
+  display: none;
+  -webkit-transition: all .3 ease-in-out;
+  transition: all .3 ease-in-out;
+  position: relative;
+  text-align: center;
+  top: 0rem;
+  left: 0;
+  z-index: -2;
+  color: white;
+  width: auto;
+  text-align: center;
+}
+
+.choose .finish h1 {
+  font-size: 3.5rem;
+  margin-bottom: .8rem;
+}
+
+.choose .finish button {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  border-radius: .5rem;
+  color: #2a46c0;
+  width: 14rem;
+  height: 3rem;
+}
+
+.choose .win {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.choose .win::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 9in;
+  -webkit-box-shadow: 0px 0px 80px 40px #606e85;
+          box-shadow: 0px 0px 80px 40px #606e85;
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    width: 90vw;
+  }
+  header img {
+    height: 80%;
+  }
+  header .score {
+    width: 20vw;
+    height: 15vw;
+  }
+  header .score p {
+    font-size: 2vw;
+  }
+  header .score .score_js {
+    font-size: 8vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    width: 90vw;
+    height: 8rem;
+  }
+  header img {
+    height: 80%;
+  }
+  header .score {
+    position: relative;
+    width: 23vw;
+    height: 100%;
+  }
+  header .score p {
+    font-size: 2.6vw;
+  }
+  header .score .score_js {
+    position: absolute;
+    bottom: 5vw;
+    font-size: 8vw;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  main img {
+    position: relative;
+    margin-top: 25vw;
+    width: 50vw;
+  }
+  .game {
+    left: -15vw;
+    width: 30vw;
+    height: 30vw;
+    -webkit-box-shadow: 0 8px 0px 0px #263fc0;
+            box-shadow: 0 8px 0px 0px #263fc0;
+  }
+  .game .ring-bg {
+    top: -.5vw;
+    left: -.5vw;
+    width: 25vw;
+    height: 25vw;
+    -webkit-box-shadow: inset 0px 13px 0px 0px #d6d4d4;
+            box-shadow: inset 0px 13px 0px 0px #d6d4d4;
+  }
+  .game .center {
+    top: -2.5vw;
+    left: -2.5vw;
+    width: 30vw;
+    height: 30vw;
+    background-size: 35%;
+  }
+  .scissors {
+    left: 37vw;
+    -webkit-box-shadow: 0 8px 0px 0px #aa7208;
+            box-shadow: 0 8px 0px 0px #aa7208;
+  }
+  .rock {
+    top: 53vw;
+    left: 11vw;
+    -webkit-box-shadow: 0 8px 0px 0px #a6112d;
+            box-shadow: 0 8px 0px 0px #a6112d;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main img {
+    margin-top: 30vw;
+  }
+  .game .ring-bg {
+    -webkit-box-shadow: inset 0px 10px 0px 0px #d6d4d4;
+            box-shadow: inset 0px 10px 0px 0px #d6d4d4;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game {
+    border-width: 4vw;
+  }
+  .game .ring-bg {
+    top: -.25vw;
+    left: -.25vw;
+    width: 22.5vw;
+    height: 22.5vw;
+  }
+  .game .center {
+    top: 0vw;
+    left: 0vw;
+    width: 22.5vw;
+    height: 22.5vw;
+    background-size: 45%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .choose {
+    padding: 1rem 18vw;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .choose {
+    padding: 1rem 18vw;
+  }
+  .choose .my, .choose .computer {
+    width: 21.5vw;
+    height: 21.5vw;
+  }
+  .choose .my .choose_h, .choose .computer .choose_h {
+    position: absolute;
+    top: -8.5rem;
+    left: 0rem;
+    z-index: 2;
+    font-size: 4vw;
+    color: white;
+    width: 35vw;
+  }
+  .choose .my .game, .choose .computer .game {
+    width: 30vw;
+    height: 30vw;
+    top: -5vw;
+    left: -5vw;
+    border-width: 3vw;
+  }
+  .choose .my .game .ring-bg, .choose .computer .game .ring-bg {
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+    width: 24.2vw;
+    height: 24.2vw;
+    -webkit-box-shadow: inset 0px 14px 0px 0px #d6d4d4;
+            box-shadow: inset 0px 14px 0px 0px #d6d4d4;
+  }
+  .choose .my .game .center, .choose .computer .game .center {
+    top: 0vw;
+    left: 0vw;
+    width: 24vw;
+    height: 24vw;
+    background-size: 45%;
+  }
+  .choose .computer .choose_h {
+    top: -8.5rem;
+    left: -5vw;
+  }
+  .choose .finish h1 {
+    font-size: 6vw;
+  }
+  .choose .finish button {
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .choose {
+    top: 18rem;
+  }
+  .choose .my .choose_h, .choose .computer .choose_h {
+    top: -5rem;
+  }
+  .choose .computer .choose_h {
+    top: -5rem;
+  }
+  .choose .finish {
+    position: absolute;
+    top: 35vw;
+    left: 30vw;
+    width: 40vw;
+  }
+  .choose .finish h1 {
+    font-size: 7vw;
+  }
+  .choose .finish button {
+    width: 35vw;
+    height: 3rem;
+  }
+  .choose .win {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  .choose .win::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9in;
+    -webkit-box-shadow: 0px 0px 10vw 3vw #606e85;
+            box-shadow: 0px 0px 10vw 3vw #606e85;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .choose .my, .choose .computer {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .choose .my .game .ring-bg, .choose .computer .game .ring-bg {
+    position: absolute;
+    top: -.25vw;
+    left: -.25vw;
+    width: 24.5vw;
+    height: 24.5vw;
+    -webkit-box-shadow: inset 0px 10px 0px 0px #d6d4d4;
+            box-shadow: inset 0px 10px 0px 0px #d6d4d4;
+  }
+  .choose .my .game .center, .choose .computer .game .center {
+    top: 0vw;
+    left: 0vw;
+    width: 24vw;
+    height: 24vw;
+    background-size: 45%;
+  }
+  .choose .finish {
+    top: 40vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
