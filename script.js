@@ -133,7 +133,7 @@ function setWinner(w,draw,text){
         })
     }else if(window.innerWidth < 1000){
         gs.to(".choose",.4,{
-            padding : "1rem 5vw"
+            padding : "1rem 5vw 0 10vw"
         })
     }else if(window.innerWidth < 1200){
         gs.to(".choose",.4,{
@@ -205,3 +205,47 @@ function playAgain(){
         computer.removeChild(computer.children[1])
     }, 1200);
 }
+
+
+
+let rules = document.querySelector(".btn_rules");
+let rulesOpen = false;
+rules.addEventListener("click",(e) => {
+    rulesOpen = !rulesOpen;
+    if(rulesOpen){
+        if(window.innerWidth < 450){
+            gs.to('.rules',.4,{
+                opacity : 1,
+                left: "5vw"
+            })
+        }else if(window.innerWidth < 650){
+            gs.to('.rules',.4,{
+                opacity : 1,
+                left: "10vw"
+            })
+        }else if(window.innerWidth < 1000){
+            gs.to('.rules',.4,{
+                opacity : 1,
+                left: "15vw"
+            })
+        }else {
+            gs.to('.rules',.4,{
+                opacity : 1,
+                left: "20vw"
+            })
+        }
+    }else{
+        closeRulesF(e)
+    }
+})
+
+let closeRules = document.querySelector(".rules_close");
+closeRules.addEventListener("click", (e) => closeRulesF(e) )
+
+ function closeRulesF(e){
+    rulesOpen = false;
+    gs.to('.rules',.4,{
+        opacity : 0,
+        left: "200vw"
+    })
+ }

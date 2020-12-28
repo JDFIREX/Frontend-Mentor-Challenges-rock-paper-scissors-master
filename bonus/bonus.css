@@ -1,0 +1,612 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+.atrribution_div {
+  width: calc(90vw - 15px);
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+  color: black;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  min-height: 768px;
+  height: 100%;
+  padding-bottom: 5rem;
+}
+
+.bg_body {
+  position: absolute;
+  z-index: -2;
+  top: -100%;
+  width: 100%;
+  height: 200%;
+  background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
+}
+
+.design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: .5;
+  z-index: 200000000000;
+  display: none;
+}
+
+header {
+  margin-top: 2.95rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40.5rem;
+  height: 9.2rem;
+  padding: 0 1.5rem;
+  border-radius: .8rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #606e85;
+}
+
+header .score {
+  width: 9.2rem;
+  border-radius: .5rem;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+}
+
+header .score p {
+  margin-top: 1rem;
+  color: #2a46c0;
+  letter-spacing: .15rem;
+}
+
+header .score h1 {
+  font-size: 4rem;
+  margin-top: -.3rem;
+  color: #3b4363;
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    width: 80vw;
+    min-height: 8rem;
+    padding: 1vw 4vw;
+  }
+  header .score {
+    width: 22vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .score p {
+    font-size: 3vw;
+    margin-top: .5rem;
+  }
+  header .score h1 {
+    font-size: 10vw;
+    margin-top: 0rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header .score {
+    width: 25vw;
+  }
+  header .score p {
+    font-size: 3.5vw;
+    margin-top: 0rem;
+  }
+  header .score h1 {
+    font-size: 13vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header .score {
+    width: 30vw;
+  }
+  header .score p {
+    font-size: 5vw;
+  }
+  header .score h1 {
+    font-size: 15vw;
+  }
+}
+
+main {
+  position: absolute;
+  top: 320px;
+  width: 329px;
+  height: 313px;
+  background-image: url("./../images/bg-pentagon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  visibility: hidden;
+}
+
+.game {
+  position: absolute;
+  width: 115px;
+  border-radius: 9in;
+  height: 115px;
+}
+
+.game::before {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 9in;
+  background-color: white;
+  padding: 1px;
+  -webkit-box-shadow: inset 0px 8px 0px 0px rgba(128, 128, 128, 0.445);
+          box-shadow: inset 0px 8px 0px 0px rgba(128, 128, 128, 0.445);
+}
+
+.game::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 45%;
+}
+
+.scissors {
+  top: -74px;
+  left: 92px;
+  border: 15px solid #ec9e0e;
+  -webkit-box-shadow: 0 8px 0px 0px #956918;
+          box-shadow: 0 8px 0px 0px #956918;
+}
+
+.scissors::after {
+  background-image: url("./../images/icon-scissors.svg");
+}
+
+.paper {
+  top: 54px;
+  left: 255px;
+  border: 15px solid #5671f5;
+  -webkit-box-shadow: 0 8px 0px 0px #3049c5;
+          box-shadow: 0 8px 0px 0px #3049c5;
+}
+
+.paper::after {
+  background-image: url("./../images/icon-paper.svg");
+}
+
+.rock {
+  top: 240px;
+  left: 192px;
+  border: 15px solid #dd405d;
+  -webkit-box-shadow: 0 8px 0px 0px #95182f;
+          box-shadow: 0 8px 0px 0px #95182f;
+}
+
+.rock::after {
+  background-image: url("./../images/icon-rock.svg");
+}
+
+.lizard {
+  top: 240px;
+  left: -5px;
+  border: 15px solid #8c5de5;
+  -webkit-box-shadow: 0 8px 0px 0px #5a2bb1;
+          box-shadow: 0 8px 0px 0px #5a2bb1;
+}
+
+.lizard::after {
+  background-image: url("./../images/icon-lizard.svg");
+}
+
+.spock {
+  top: 54px;
+  left: -70px;
+  border: 15px solid #52bed1;
+  -webkit-box-shadow: 0 8px 0px 0px #278090;
+          box-shadow: 0 8px 0px 0px #278090;
+}
+
+.spock::after {
+  background-image: url("./../images/icon-spock.svg");
+}
+
+@media only screen and (max-width: 550px) {
+  main {
+    width: 59.818vw;
+    height: 56.909vw;
+  }
+  .game {
+    width: 20.909vw;
+    height: 20.909vw;
+  }
+  .game::before {
+    -webkit-box-shadow: inset 0px 1.455vw 0px 0px rgba(128, 128, 128, 0.445);
+            box-shadow: inset 0px 1.455vw 0px 0px rgba(128, 128, 128, 0.445);
+  }
+  .scissors {
+    top: -13.455vw;
+    left: 16.727vw;
+    border: 2.727vw solid #ec9e0e;
+    -webkit-box-shadow: 0 1.455vw 0px 0px #956918;
+            box-shadow: 0 1.455vw 0px 0px #956918;
+  }
+  .paper {
+    top: 9.818vw;
+    left: 46.364vw;
+    border: 2.727vw solid #5671f5;
+    -webkit-box-shadow: 0 1.455vw 0px 0px #3049c5;
+            box-shadow: 0 1.455vw 0px 0px #3049c5;
+  }
+  .rock {
+    top: 43.636vw;
+    left: 34.909vw;
+    border: 2.727vw solid #dd405d;
+    -webkit-box-shadow: 0 1.455vw 0px 0px #95182f;
+            box-shadow: 0 1.455vw 0px 0px #95182f;
+  }
+  .lizard {
+    top: 43.636vw;
+    left: 0.909vw;
+    border: 2.727vw solid #8c5de5;
+    -webkit-box-shadow: 0 1.455vw 0px 0px #5a2bb1;
+            box-shadow: 0 1.455vw 0px 0px #5a2bb1;
+  }
+  .spock {
+    top: 9.818vw;
+    left: -12.727vw;
+    border: 2.727vw solid #52bed1;
+    -webkit-box-shadow: 0 1.455vw 0px 0px #278090;
+            box-shadow: 0 1.455vw 0px 0px #278090;
+  }
+}
+
+.fight {
+  position: absolute;
+  top: 260px;
+  min-width: 50rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 4rem;
+  -webkit-transition: all .3 ease-in-out;
+  transition: all .3 ease-in-out;
+}
+
+.fight .pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .5rem 6.7rem 0 8.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fight .pic h1 {
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+  color: white;
+}
+
+.fight .my, .fight .computer {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  border-radius: 9in;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fight .my .game, .fight .computer .game {
+  position: relative;
+  top: -30px;
+  left: -30px;
+  width: 100%;
+  height: 100%;
+  border-width: 30px;
+}
+
+.fight .my .game::before, .fight .computer .game::before {
+  -webkit-box-shadow: inset 0px 15px 0px 0px rgba(128, 128, 128, 0.445);
+          box-shadow: inset 0px 15px 0px 0px rgba(128, 128, 128, 0.445);
+}
+
+.fight .my .scissors, .fight .computer .scissors {
+  -webkit-box-shadow: 0 15px 0px 0px #956918;
+          box-shadow: 0 15px 0px 0px #956918;
+}
+
+.fight .my .paper, .fight .computer .paper {
+  -webkit-box-shadow: 0 15px 0px 0px #3049c5;
+          box-shadow: 0 15px 0px 0px #3049c5;
+}
+
+.fight .my .rock, .fight .computer .rock {
+  -webkit-box-shadow: 0 15px 0px 0px #95182f;
+          box-shadow: 0 15px 0px 0px #95182f;
+}
+
+.fight .my .lizard, .fight .computer .lizard {
+  -webkit-box-shadow: 0 15px 0px 0px #5a2bb1;
+          box-shadow: 0 15px 0px 0px #5a2bb1;
+}
+
+.fight .my .spock, .fight .computer .spock {
+  -webkit-box-shadow: 0 15px 0px 0px #278090;
+          box-shadow: 0 15px 0px 0px #278090;
+}
+
+.fight .my {
+  margin-top: 8.5rem;
+  margin-left: 6rem;
+}
+
+.fight .computer {
+  margin-top: 8.5rem;
+  margin-right: 7rem;
+}
+
+.fight .winner {
+  display: none;
+}
+
+.fight_end {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 67.7rem;
+}
+
+.fight_end .computer {
+  margin-top: 8.5rem;
+  margin-right: 7.3rem;
+}
+
+.fight_end .winner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fight_end .winner h1 {
+  position: relative;
+  top: 1.1rem;
+  font-size: 3.5rem;
+  color: white;
+}
+
+.fight_end .winner button {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  top: 1.8rem;
+  width: 13.5rem;
+  border-radius: .5rem;
+  height: 3rem;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  color: #3b4363;
+}
+
+.fight_end .win {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.fight_end .win::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9in;
+  -webkit-box-shadow: 0px 0px 80px 40px #606e85;
+          box-shadow: 0px 0px 80px 40px #606e85;
+}
+
+@media only screen and (max-width: 1000px) {
+  .fight_end {
+    width: 100vw;
+  }
+  .fight_end .my {
+    margin-left: 6vw;
+  }
+  .fight_end .computer {
+    margin-right: 6vw;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .fight {
+    top: 260px;
+    min-width: 100vw;
+  }
+  .fight .pic {
+    width: 100%;
+    padding: .5rem 13vw 0 17vw;
+  }
+  .fight .pic h1 {
+    font-size: 3.5vw;
+  }
+  .fight .my, .fight .computer {
+    margin-top: 15vw;
+    width: 25.568vw;
+    height: 25.568vw;
+  }
+  .fight .my {
+    margin-left: 5vw;
+  }
+  .fight .my .game, .fight .computer .game {
+    top: -3.409vw;
+    left: -3.409vw;
+    border-width: 3.409vw;
+  }
+  .fight .my .game::before, .fight .computer .game::before {
+    -webkit-box-shadow: inset 0px 1.705vw 0px 0px rgba(128, 128, 128, 0.445);
+            box-shadow: inset 0px 1.705vw 0px 0px rgba(128, 128, 128, 0.445);
+  }
+  .fight .my .scissors, .fight .computer .scissors {
+    -webkit-box-shadow: 0 1.705vw 0px 0px #956918;
+            box-shadow: 0 1.705vw 0px 0px #956918;
+  }
+  .fight .my .paper, .fight .computer .paper {
+    -webkit-box-shadow: 0 1.705vw 0px 0px #3049c5;
+            box-shadow: 0 1.705vw 0px 0px #3049c5;
+  }
+  .fight .my .rock, .fight .computer .rock {
+    -webkit-box-shadow: 0 1.705vw 0px 0px #95182f;
+            box-shadow: 0 1.705vw 0px 0px #95182f;
+  }
+  .fight .my .lizard, .fight .computer .lizard {
+    -webkit-box-shadow: 0 1.705vw 0px 0px #5a2bb1;
+            box-shadow: 0 1.705vw 0px 0px #5a2bb1;
+  }
+  .fight .my .spock, .fight .computer .spock {
+    -webkit-box-shadow: 0 1.705vw 0px 0px #278090;
+            box-shadow: 0 1.705vw 0px 0px #278090;
+  }
+  .fight .computer {
+    margin-right: 13vw;
+  }
+  .fight_end {
+    width: 100vw;
+  }
+  .fight_end .computer {
+    margin-top: 15vw;
+    margin-right: 5vw;
+  }
+  .fight_end .my {
+    margin-top: 15vw;
+    margin-left: 5vw;
+  }
+  .fight_end .winner h1 {
+    top: 3vw;
+    font-size: 7vw;
+  }
+  .fight_end .winner button {
+    top: 1.8rem;
+    width: 25vw;
+    height: 6vw;
+    font-size: 2vw;
+  }
+  .fight_end .win::before {
+    -webkit-box-shadow: 0px 0px 9.091vw 4.545vw #606e85;
+            box-shadow: 0px 0px 9.091vw 4.545vw #606e85;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .fight_end .computer {
+    margin-right: 15vw;
+  }
+  .fight_end .my {
+    margin-left: 15vw;
+  }
+  .fight_end .winner h1 {
+    font-size: 7vw;
+  }
+  .fight_end .winner button {
+    width: 30vw;
+    height: 8vw;
+  }
+  .fight_end .winner {
+    top: 30vw;
+    left: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+/*# sourceMappingURL=bonus.css.map */

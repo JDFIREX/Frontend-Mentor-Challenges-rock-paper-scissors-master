@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+.atrribution_div{width: calc(90vw - 15px); position: fixed ; bottom: 0px; left : 10px; color: black;}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+*{
+    margin: 0; padding: 0;
+    box-sizing: content-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 768px;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+.bg_body{
+    position: absolute;
+    z-index: -2;
+    top: -100%;
+    width: 100%;
+    height: 200%;
+    background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
+}
+.design{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    opacity: .5;
+    z-index: 200000000000;
+    // z-index: -2;
+    display: none;
+}
+header{
+    margin-top: 2.95rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40.5rem;
+    height: 9.2rem;
+    padding: 0 1.5rem;
+    border-radius: .8rem;
+    align-items: center;
+    border: 3px solid hsl(217, 16%, 45%);
+    .score{
+        width: 9.2rem;
+        border-radius: .5rem;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;;
+        p{
+            margin-top: 1rem;
+            color : hsl(229, 64%, 46%);
+            letter-spacing: .15rem;
+        }
+        h1{
+            font-size: 4rem;
+            margin-top: -.3rem;
+            color: hsl(229, 25%, 31%);
+        }
+    }
+}
+@media only screen and (max-width: 750px){
+    header{width: 80vw;min-height: 8rem;padding: 1vw 4vw;
+        .score{width: 22vw;justify-content: center;
+            p{font-size: 3vw;margin-top: .5rem;}
+            h1{font-size: 10vw;margin-top: 0rem;}}}
+}
+@media only screen and (max-width: 550px){
+    header{
+        .score{width: 25vw;
+            p{font-size: 3.5vw;margin-top: 0rem;}
+            h1{font-size: 13vw;}}}
+}
+@media only screen and (max-width: 400px){
+    header{
+        .score{width: 30vw;
+            p{font-size: 5vw;}
+            h1{font-size: 15vw;}}}
+}
+
+main{
+    position: absolute;
+    top: 320px;
+    width: 329px;
+    height: 313px;
+    background-image: url("./../images/bg-pentagon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    visibility: hidden;
+}
+.game{
+    position: absolute;
+    width: 115px;
+    border-radius: 9in;
+    height: 115px;
+    &::before{
+        position: absolute;
+        top:-1px;left: -1px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 9in;
+        background-color: white;
+        padding: 1px;
+        box-shadow: inset 0px 8px 0px 0px rgba(128, 128, 128, 0.445);
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 45%;
+    }
+}
+.scissors{
+    top: -74px; left: 92px;
+    border: 15px solid hsl(39, 89%, 49%);
+    box-shadow: 0 8px 0px 0px hsl(39, 72%, 34%);
+    &::after{
+        background-image: url("./../images/icon-scissors.svg");
+    }
+}
+.paper{
+    top: 54px; left:255px;
+    border: 15px solid hsl(230, 89%, 65%);
+    box-shadow: 0 8px 0px 0px hsl(230, 61%, 48%);
+    &::after{
+        background-image: url("./../images/icon-paper.svg");
+    }
+}
+.rock{
+    top: 240px; left:192px;
+    border: 15px solid hsl(349, 70%, 56%);
+    box-shadow: 0 8px 0px 0px hsl(349, 72%, 34%);
+    &::after{
+        background-image: url("./../images/icon-rock.svg");
+    }
+}
+.lizard{
+    top: 240px; left:-5px;
+    border: 15px solid hsl(261, 72%, 63%);
+    box-shadow: 0 8px 0px 0px hsl(261, 61%, 43%);
+    &::after{
+        background-image: url("./../images/icon-lizard.svg");
+    }
+}
+.spock{
+    top: 54px; left:-70px;
+    border: 15px solid hsl(189, 58%, 57%);
+    box-shadow: 0 8px 0px 0px hsl(189, 57%, 36%);
+    &::after{
+        background-image: url("./../images/icon-spock.svg");
+    }
+}
+
+@media only screen and  (max-width: 550px){
+    main{width: 59.818vw;height: 56.909vw;}
+    .game{width: 20.909vw;height: 20.909vw;
+        &::before{box-shadow: inset 0px 1.455vw 0px 0px rgba(128, 128, 128, 0.445);}}
+    .scissors{top: -13.455vw; left: 16.727vw;border: 2.727vw solid hsl(39, 89%, 49%);box-shadow: 0 1.455vw 0px 0px hsl(39, 72%, 34%);}
+    .paper{top: 9.818vw; left:46.364vw;border: 2.727vw solid hsl(230, 89%, 65%);box-shadow: 0 1.455vw 0px 0px hsl(230, 61%, 48%);}
+    .rock{top: 43.636vw; left:34.909vw;border: 2.727vw solid hsl(349, 70%, 56%);box-shadow: 0 1.455vw 0px 0px hsl(349, 72%, 34%);}
+    .lizard{top: 43.636vw; left:0.909vw;border: 2.727vw solid hsl(261, 72%, 63%);box-shadow: 0 1.455vw 0px 0px hsl(261, 61%, 43%);}
+    .spock{top: 9.818vw; left:-12.727vw;border: 2.727vw solid hsl(189, 58%, 57%);box-shadow: 0 1.455vw 0px 0px hsl(189, 57%, 36%);}
+}
+
+
+.fight{
+    position: absolute;
+    top: 260px;
+    min-width: 50rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    transition: all .3 ease-in-out;
+    .pic{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: .5rem 6.7rem 0 8.5rem;
+        justify-content: space-between;
+        
+        h1{
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+            color:white;
+        }
+    }
+    .my,.computer{
+        position: relative;
+        width: 225px;
+        height: 225px;
+        border-radius: 9in;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        .game{
+            position: relative;
+            top: -30px; left: -30px;
+            width: 100%;
+            height: 100%;
+            border-width: 30px;
+            &::before{
+                box-shadow: inset 0px 15px 0px 0px rgba(128, 128, 128, 0.445);
+            }
+        }
+        .scissors{
+            box-shadow: 0 15px 0px 0px hsl(39, 72%, 34%);
+        }
+        .paper{
+            box-shadow: 0 15px 0px 0px hsl(230, 61%, 48%);
+        }
+        .rock{
+            box-shadow: 0 15px 0px 0px hsl(349, 72%, 34%);
+        }
+        .lizard{
+            box-shadow: 0 15px 0px 0px hsl(261, 61%, 43%);
+        }
+        .spock{
+            box-shadow: 0 15px 0px 0px hsl(189, 57%, 36%);
+        }
+    }
+    .my{
+        margin-top: 8.5rem;
+        margin-left: 6rem;  
+    }
+    .computer{
+        margin-top: 8.5rem;
+        margin-right: 7rem;
+    }
+    .winner{
+        display: none;
+    }
+}
+
+.fight_end{
+    transition: all .3s ease-in-out;
+    width: 67.7rem;
+
+    .computer{
+        margin-top: 8.5rem;
+        margin-right: 7.3rem;
+    }
+    .winner{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h1{
+            position: relative; top: 1.1rem;
+            font-size: 3.5rem;
+            color: white;
+        }
+        button{
+            outline: none;
+            border: none;
+            text-decoration: none;
+            position: relative; top: 1.8rem;
+            width: 13.5rem;
+            border-radius: .5rem;
+            height: 3rem;
+            font-size: 1rem;
+            letter-spacing: .15rem;
+            color: hsl(229, 25%, 31%);
+        }
+    }
+    .win{
+        transition: all .3s ease-in-out;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 9in;
+            box-shadow: 0px 0px 80px 40px #606e85;
+        }
+    }
+}
+@media only screen and (max-width: 1000px){
+    .fight_end{width: 100vw;
+        .my{margin-left: 6vw;}
+        .computer{margin-right: 6vw;}}
+}
+@media only screen and (max-width: 880px){
+    .fight{top: 260px;min-width: 100vw;
+        .pic{width: 100%;padding: .5rem 13vw 0 17vw;
+            h1{font-size: 3.5vw;}}
+        .my,.computer{margin-top: 15vw;width: 25.568vw;height: 25.568vw;}
+        .my{margin-left: 5vw;}
+        .my,.computer{
+            .game{top: -3.409vw; left: -3.409vw;border-width: 3.409vw;
+                &::before{box-shadow: inset 0px 1.705vw 0px 0px rgba(128, 128, 128, 0.445);}}
+            .scissors{box-shadow: 0 1.705vw 0px 0px hsl(39, 72%, 34%);}
+            .paper{box-shadow: 0 1.705vw 0px 0px hsl(230, 61%, 48%);}
+            .rock{box-shadow: 0 1.705vw 0px 0px hsl(349, 72%, 34%);}
+            .lizard{box-shadow: 0 1.705vw 0px 0px hsl(261, 61%, 43%);}
+            .spock{box-shadow: 0 1.705vw 0px 0px hsl(189, 57%, 36%);}}
+        .computer{margin-right: 13vw;}}
+    .fight_end{width: 100vw;
+        .computer{margin-top: 15vw;margin-right: 5vw;}
+        .my{margin-top: 15vw;margin-left: 5vw;}
+        .winner{
+            h1{top: 3vw;font-size: 7vw;}
+            button{top: 1.8rem;width: 25vw;height: 6vw;font-size: 2vw;}}
+        .win{
+            &::before{box-shadow: 0px 0px 9.091vw 4.545vw #606e85;}}}
+}
+@media only screen and (max-width: 880px){
+    .fight_end{
+        .computer{margin-right: 15vw;}
+        .my{margin-left: 15vw;}
+        .winner{
+            h1{font-size: 7vw;}
+            button{width: 30vw;height: 8vw;}}
+        .winner{top: 30vw; left: 0;transform: scale(1.2);}}
+}

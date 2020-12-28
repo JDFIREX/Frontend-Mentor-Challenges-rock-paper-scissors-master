@@ -24,11 +24,14 @@
           box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
   width: 100%;
-  min-height: 768px;
-  max-height: 100vh;
+  min-height: 100vh;
   height: 100%;
   font-family: 'Barlow Semi Condensed', sans-serif;
   display: -webkit-box;
@@ -42,6 +45,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: hidden;
+  padding-bottom: 5rem;
 }
 
 .body-bg {
@@ -51,13 +55,6 @@ body {
   width: 100%;
   height: 200%;
   background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
-}
-
-.design {
-  position: absolute;
-  top: 0;
-  opacity: .8;
-  display: none;
 }
 
 header {
@@ -122,6 +119,7 @@ header .score .score_js {
 main {
   -webkit-transform: scale(1);
           transform: scale(1);
+  margin-bottom: 5rem;
 }
 
 main img {
@@ -323,6 +321,102 @@ main img {
           box-shadow: 0px 0px 80px 40px #606e85;
 }
 
+.btns {
+  position: absolute;
+  bottom: 5vw;
+  left: 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 5vw;
+}
+
+.btns button {
+  width: 10rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  background: none;
+  border-radius: .5rem;
+}
+
+.btns .btn_bonus a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
+
+.btns .btn_rules h1 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
+
+.rules {
+  position: fixed;
+  top: 5vw;
+  left: 200vw;
+  border-radius: .5rem;
+  opacity: 0;
+  background-color: white;
+  width: 60vw;
+  height: auto;
+}
+
+.rules .r_header {
+  height: 3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1.5rem 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rules .r_header h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  color: black;
+}
+
+.rules .r_header img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.rules .r_main {
+  width: 100%;
+  background-color: white;
+  padding: 2rem 0;
+  border-radius: .5rem;
+  text-align: center;
+}
+
+.rules .r_main img {
+  height: 100%;
+}
+
 @media only screen and (max-width: 750px) {
   header {
     width: 90vw;
@@ -388,7 +482,7 @@ main img {
   }
   .game .center {
     top: -2.5vw;
-    left: -2.5vw;
+    left: -3.5vw;
     width: 30vw;
     height: 30vw;
     background-size: 35%;
@@ -435,7 +529,7 @@ main img {
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
   .choose {
     padding: 1rem 18vw;
   }
@@ -450,12 +544,8 @@ main img {
     height: 21.5vw;
   }
   .choose .my .choose_h, .choose .computer .choose_h {
-    position: absolute;
-    top: -8.5rem;
     left: 0rem;
-    z-index: 2;
     font-size: 4vw;
-    color: white;
     width: 35vw;
   }
   .choose .my .game, .choose .computer .game {
@@ -466,9 +556,6 @@ main img {
     border-width: 3vw;
   }
   .choose .my .game .ring-bg, .choose .computer .game .ring-bg {
-    position: absolute;
-    top: 0vw;
-    left: 0vw;
     width: 24.2vw;
     height: 24.2vw;
     -webkit-box-shadow: inset 0px 14px 0px 0px #d6d4d4;
@@ -554,6 +641,87 @@ main img {
   }
   .choose .finish {
     top: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .rules {
+    top: 5vw;
+    width: 70vw;
+  }
+  .rules .r_header {
+    padding: 2rem 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .rules .r_header h1 {
+    font-size: 1.5rem;
+  }
+  .rules .r_header img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .rules .r_main {
+    width: 100%;
+    background-color: white;
+    padding: 2rem 0;
+    border-radius: .5rem;
+  }
+  .rules .r_main img {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .rules {
+    width: 80vw;
+  }
+  .rules .r_header {
+    padding: 5vw 3vw;
+  }
+  .rules .r_header h1 {
+    font-size: 3vw;
+  }
+  .rules .r_header img {
+    width: 4vw;
+    height: 4vw;
+  }
+  .rules .r_main {
+    padding: 5vw 0;
+  }
+  .rules .r_main img {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .btns button {
+    width: 35vw;
+    height: 2.5rem;
+  }
+  .btns .btn_bonus a {
+    font-size: 5vw;
+  }
+  .btn_rules h1 {
+    font-size: 5vw;
+  }
+  .btn_rules .rules {
+    top: 15vw;
+    width: 90vw;
+  }
+  .btn_rules .rules .r_header h1 {
+    font-size: 5vw;
+  }
+  .btn_rules .rules .r_header img {
+    width: 5vw;
+    height: 5vw;
+  }
+  .btn_rules .rules .r_main {
+    padding: 5vw 5vw;
+  }
+  .btn_rules .rules .r_main img {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

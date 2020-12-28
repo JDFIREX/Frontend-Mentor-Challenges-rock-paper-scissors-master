@@ -1,27 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
-
 .atrribution_div{width: calc(90vw - 15px); position: fixed ; bottom: 0px; left : 10px; color: black;}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
-
-
 *{
     margin: 0; padding: 0;
     font-family: 'Barlow Semi Condensed', sans-serif;
     box-sizing: border-box;
 }
-
+html{
+    overflow-x: hidden;
+}
 body{
     position: relative;
     width: 100%;
-    min-height: 768px;
-    max-height: 100vh;
+    min-height: 100vh;
     height: 100%;
     font-family: 'Barlow Semi Condensed', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    padding-bottom: 5rem;
 }
 .body-bg{
     position: absolute;
@@ -31,14 +30,6 @@ body{
     height: 200%;
     background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
 }
-
-.design{
-    position: absolute;
-    top: 0;
-    opacity: .8;
-    display: none;
-}
-
 header{
     margin-top: 3rem;
     position: relative;
@@ -78,18 +69,15 @@ header{
         }
     }
 }
-
-
 main{
-    // visibility: hidden;
     transform: scale(1);
+    margin-bottom: 5rem;
     img{
         position: relative;
         margin-top: 10rem;
         z-index: -2;
     }
 }
-
 .game{
     position: absolute;
     top: 4rem;
@@ -142,8 +130,6 @@ main{
         background-image: url("./images/icon-rock.svg");
     }
 }
-
-
 .choose{
     visibility: hidden;
     position: absolute;
@@ -154,7 +140,6 @@ main{
     flex-direction: row;
     justify-content: space-between;
     top: 23.8rem; left: 0;
-
     .my,.computer{
         position: relative;
         top: 0rem;
@@ -164,7 +149,6 @@ main{
         background-color: rgba(0, 0, 0, 0.2);
         z-index: -2;
         transition: all .3 ease-in-out;
-
         .choose_h{
             position: absolute;
             top: -8.5rem;
@@ -173,13 +157,12 @@ main{
             color: white;
             width :10rem;
         }
-
         .game{
             width: 290px; height: 290px;
             top: -2rem;
             left: -2rem;
             border-width: 30px;
-        
+    
             .ring-bg{
                 position: absolute; top: 0px; left: 0px;
                 width: 230px;
@@ -240,6 +223,89 @@ main{
             height: 100%;
             border-radius: 9in;
             box-shadow: 0px 0px 80px 40px #606e85;
+        }
+    }
+}
+.btns{
+    position: absolute;
+    bottom: 5vw;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5vw;
+
+
+    button{
+        width: 10rem;
+        height: 3rem;
+        outline: none;
+        border: none;
+        color: white;
+        text-decoration: none;
+        border: 1px solid white;
+        background: none;
+        border-radius: .5rem;
+    }
+    .btn_bonus{
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+    }
+
+    .btn_rules{
+
+        h1{
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+        
+    }
+}
+.rules{
+    position: fixed;
+    top: 5vw;
+    left: 200vw; // 20vw
+    border-radius: .5rem;
+    opacity: 0;
+    background-color: white;
+    width: 60vw;
+    height: auto;
+
+    .r_header{
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+        justify-content: space-between;
+        
+        h1{
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: .1rem;
+            color: black;
+        }
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .r_main{
+        width: 100%;
+        background-color: white;
+        padding: 2rem 0;
+        border-radius: .5rem;
+        text-align: center;
+        img{
+            height: 100%;
         }
     }
 }
@@ -305,7 +371,7 @@ main{
         }
         .center{
             top: -2.5vw;
-            left: -2.5vw;
+            left: -3.5vw;
             width: 30vw;
             height: 30vw;
             background-size: 35%;
@@ -333,7 +399,6 @@ main{
         }
     }
 }
-
 @media only screen and (max-width: 600px){
     .game{
         border-width: 4vw;
@@ -352,24 +417,19 @@ main{
         }
     }
 }
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1250px){
     .choose{
         padding: 1rem 18vw; // 28vw 
     }
 }
-
 @media only screen and (max-width: 1050px){
     .choose{
         padding: 1rem 18vw;
         .my,.computer{
             width: 21.5vw; height: 21.5vw;
             .choose_h{
-                position: absolute;
-                top: -8.5rem;
                 left: 0rem;
-                z-index: 2;
                 font-size: 4vw;
-                color: white;
                 width :35vw;
             }
             .game{
@@ -379,7 +439,6 @@ main{
                 border-width: 3vw;
             
                 .ring-bg{
-                    position: absolute; top: 0vw; left: 0vw;
                     width:24.2vw;
                     height: 24.2vw;
                     box-shadow: inset 0px 14px 0px 0px rgb(214, 212, 212);
@@ -450,7 +509,6 @@ main{
         }
     }
 }
-
 @media only screen and (max-width: 400px){
     .choose{
         .my,.computer{
@@ -474,6 +532,92 @@ main{
     .choose{
         .finish{
             top: 40vw;
+        }
+    }
+}
+@media only screen and (max-width: 1000px){
+    .rules{
+        top: 5vw; // left 15vw
+        width: 70vw;
+
+        .r_header{
+            padding: 2rem 2rem;
+            align-items: center;
+            h1{
+                font-size: 1.5rem;
+            }
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+        .r_main{
+            width: 100%;
+            background-color: white;
+            padding: 2rem 0;
+            border-radius: .5rem;
+            img{
+                width: 80%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 650px){
+    .rules{ // 10 vw left
+        width: 80vw;
+        .r_header{
+            padding: 5vw 3vw;
+            h1{
+                font-size: 3vw;
+            }
+            img{
+                width: 4vw;
+                height: 4vw;
+            }
+        }
+        .r_main{
+            padding: 5vw 0;
+            img{
+                width: 90%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px){
+    .btns{
+        button{
+            width: 35vw;
+            height: 2.5rem;
+        }
+        .btn_bonus{
+            a{
+                font-size: 5vw;
+            }
+        }
+        
+    }
+    .btn_rules{
+        h1{
+            font-size: 5vw;
+        }
+        .rules{
+            top: 15vw;// left 5 vw
+            width: 90vw;
+            .r_header{
+                h1{
+                    font-size: 5vw;
+                }
+                img{
+                    width: 5vw;
+                    height: 5vw;
+                }
+            }
+            .r_main{
+                padding: 5vw 5vw;
+                img{
+                    width: 100%;
+                }
+            }
         }
     }
 }

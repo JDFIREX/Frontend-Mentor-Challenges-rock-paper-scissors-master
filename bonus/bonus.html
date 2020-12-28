@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./../images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="bonus.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+    <div class="bg_body"></div>
+    <img src="./../design/bonus/desktop-step-4-bonus.jpg" class="design" alt="">
+
+    <header class="header">
+        <img src="./../images/logo-bonus.svg" alt="bonus logo">
+        <div class="score">
+            <p class="score_p">SCORE</p>
+            <h1 class="score_h">12</h1>
+        </div>
+    </header>
+
+    <main class="main">
+      <div class="scissors  game"></div>
+      <div class="paper  game"></div>
+      <div class="rock  game"></div>
+      <div class="lizard  game"></div>
+      <div class="spock  game"></div>
+    </main>
+
+    <div class="fight  fight_end"> <!-- fight_end-->
+      <div class="pic">
+        <h1>YOU PICKED</h1>
+        <H1>THE HOUSE PICKED</H1>
+      </div>
+      <div class="my"> <!-- win-->
+        <div class="scissors  game"></div>
+      </div>
+      <div class="winner">
+        <h1 class="winner_h">YOU LOSE</h1>
+        <button class="winner_b">PLAY AGAIN</button>
+      </div>
+      <div class="computer">
+        <div class="spock  game"></div>
+      </div>
+    </div>
+
+
+  <div  class ="atrribution_div">
+    <p class="attribution">
+      Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a rel="noopener" href="https://www.frontendmentor.io/profile/JDFIREX" target="_blank">Jonatan Dajtrowski</a>.
+    </p>
+  </div>
+  <script src="bonus.js"></script>
+</body>
+</html>
