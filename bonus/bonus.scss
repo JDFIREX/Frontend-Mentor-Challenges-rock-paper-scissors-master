@@ -1,5 +1,41 @@
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #2f2e85;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
-.atrribution_div{width: calc(90vw - 15px); position: fixed ; bottom: 0px; left : 10px; color: black;}
+.atrribution_div{width: 100vw; position: absolute; bottom: 2vw; left : 10px; color: black;}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 *{
@@ -19,7 +55,7 @@ body{
     text-align: center;
     overflow-x: hidden;
     min-height: 768px;
-    height: 100%;
+    height: 100vh;
 }
 .bg_body{
     position: absolute;
@@ -28,15 +64,6 @@ body{
     width: 100%;
     height: 200%;
     background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
-}
-.design{
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    opacity: .5;
-    z-index: 200000000000;
-    // z-index: -2;
-    display: none;
 }
 header{
     margin-top: 2.95rem;
@@ -96,7 +123,7 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    visibility: hidden;
+    // visibility: hidden;
 }
 .game{
     position: absolute;
@@ -176,7 +203,7 @@ main{
     .spock{top: 9.818vw; left:-12.727vw;border: 2.727vw solid hsl(189, 58%, 57%);box-shadow: 0 1.455vw 0px 0px hsl(189, 57%, 36%);}
 }
 .fight{
-    // visibility: hidden;
+    visibility: hidden;
     position: absolute;
     top: 260px;
     min-width: 50rem;
@@ -306,10 +333,10 @@ main{
         padding-bottom: 30vw;
     }
     .fight{top: 260px;min-width: 100vw;
-        .pic{width: 100%;padding: .5rem 13vw 0 17vw;
+        .pic{width: 100%;padding: .5rem 10vw 0 17vw;
             h1{font-size: 3.5vw;}}
         .my,.computer{margin-top: 15vw;width: 25.568vw;height: 25.568vw;}
-        .my{margin-left: 5vw;}
+        .my{margin-left: 15vw;}
         .my,.computer{
             .game{top: -3.409vw; left: -3.409vw;border-width: 3.409vw;
                 &::before{box-shadow: inset 0px 1.705vw 0px 0px rgba(128, 128, 128, 0.445);}}
@@ -318,7 +345,7 @@ main{
             .rock{box-shadow: 0 1.705vw 0px 0px hsl(349, 72%, 34%);}
             .lizard{box-shadow: 0 1.705vw 0px 0px hsl(261, 61%, 43%);}
             .spock{box-shadow: 0 1.705vw 0px 0px hsl(189, 57%, 36%);}}
-        .computer{margin-right: 13vw;}}
+        .computer{margin-right: 15vw;}}
     .fight_end{width: 100vw;
         .computer{margin-right: 15vw;}
         .my{margin-left: 15vw;}
@@ -378,10 +405,11 @@ main{
             a{font-size: 5vw;}}}
 }
 .rules_box{
+    opacity: 0;
     position: fixed;
     top: 2rem;
     width: 50vw;
-    left: 25vw;
+    left: 200vw; //  25vw
     height: auto;
     padding: 1rem;
     border-radius: .5rem;
@@ -415,11 +443,11 @@ main{
     }
 }
 @media only screen and (max-width: 900px){
-    .rules_box{top: 10vw;width: 80vw;left: 10vw;padding: 2vw;
+    .rules_box{top: 10vw;width: 80vw;padding: 2vw; // 10vw
         .r_main{padding: 2vw;}}
 }
-@media only screen and (max-width: 900px){
-    .rules_box{top: 5vw;width: 90vw;left: 5vw;padding: 3vw;
+@media only screen and (max-width: 600px){
+    .rules_box{top: 5vw;width: 90vw;padding: 3vw; // 5vw
         .r_h{
             h1{font-size: 6vw;}
             img{width: 5vw;height: 5vw;}}

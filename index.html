@@ -13,7 +13,6 @@
 </head>
 <body>
   <div class="body-bg"></div>
-
   <header>
     <img src="./images/logo.svg" alt="logo">
     <div class="score">
@@ -23,32 +22,38 @@
   </header>
 
   <main class="main">
-    <img class="main_img" src="./images/bg-triangle.svg" alt="triangle">
-    <div class="paper game" data-pic="paper">
-      <div class="ring-bg"></div>
-      <div class="center"></div>
-    </div>
-    <div class="scissors game" data-pic="scissors">
-      <div class="ring-bg"></div>
-      <div class="center"></div>
-    </div>
-    <div class="rock game" data-pic="rock">
-      <div class="ring-bg"></div>
-      <div class="center"></div>
-    </div>
+    <div class="scissors  game" data-pic="scissors"></div>
+    <div class="paper  game" data-pic="paper"></div>
+    <div class="rock  game" data-pic="rock"></div>
   </main>
 
-  <div class="choose">
-    <div class="my">
-      <h1 class="choose_h">YOU PICKED</h1>
+  <div class="fight"> <!-- fight_end-->
+    <div class="pic">
+      <h1>YOU PICKED</h1>
+      <H1>THE HOUSE PICKED</H1>
     </div>
-    
-    <div class="finish">
-      <h1 class="finish_h">YOU WIN</h1>
-      <button class="finish_btn" onclick="playAgain()">PLAY AGAIN</button>
+    <div class="my"> <!-- win-->
+    </div>
+    <div class="winner">
+      <h1 class="winner_h"></h1>
+      <button class="winner_b" onclick="playAgain()">PLAY AGAIN</button>
     </div>
     <div class="computer">
-      <h1 class="choose_h">THE HOUSE PICKED</h1>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button class="orginal"><a href="./bonus/bonus.html">BONUS</a></button>
+    <button class="rules">RULES</button>
+  </div>
+
+  <div class="rules_box">
+    <div class="r_h">
+      <h1>Rules Bonus</h1>
+      <img class="rules_close" src="./images/icon-close.svg" alt="close">
+    </div>
+    <div class="r_main">
+      <img src="./images/image-rules.svg" alt="rules bonus">
     </div>
   </div>
 
@@ -58,25 +63,6 @@
       Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a rel="noopener" href="https://www.frontendmentor.io/profile/JDFIREX" target="_blank">Jonatan Dajtrowski</a>.
     </p>
-  </div>
-
-  <div class="btns">
-    <button class="btn_bonus">
-      <a href="./bonus/bonus.html">BONUS</a>
-    </button>
-    <button class="btn_rules">
-      <h1>RULES</h1>
-    </button>
-  </div>
-
-  <div class="rules">
-    <div class="r_header">
-      <h1>RULES ROCK PAPER SCISSORS</h1>
-      <img class="rules_close" src="images/icon-close.svg" alt="close icon">
-    </div>
-    <div class="r_main">
-      <img src="images/image-rules.svg" alt="image rules">
-    </div>
   </div>
 
   <script src="script.js"></script>

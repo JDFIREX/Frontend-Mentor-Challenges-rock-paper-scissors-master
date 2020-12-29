@@ -13,38 +13,35 @@
 </head>
 <body>
     <div class="bg_body"></div>
-    <img src="./../design/bonus/desktop-step-4-bonus.jpg" class="design" alt="">
 
     <header class="header">
         <img src="./../images/logo-bonus.svg" alt="bonus logo">
         <div class="score">
             <p class="score_p">SCORE</p>
-            <h1 class="score_h">12</h1>
+            <h1 class="score_h">0</h1>
         </div>
     </header>
 
     <main class="main">
-      <div class="scissors  game"></div>
-      <div class="paper  game"></div>
-      <div class="rock  game"></div>
-      <div class="lizard  game"></div>
-      <div class="spock  game"></div>
+      <div class="scissors  game" data-pic="scissors"></div>
+      <div class="paper  game" data-pic="paper"></div>
+      <div class="rock  game" data-pic="rock"></div>
+      <div class="lizard  game" data-pic="lizard"></div>
+      <div class="spock  game" data-pic="spock"></div>
     </main>
 
-    <div class="fight fight_end"> <!-- fight_end-->
+    <div class="fight"> <!-- fight_end-->
       <div class="pic">
         <h1>YOU PICKED</h1>
         <H1>THE HOUSE PICKED</H1>
       </div>
       <div class="my"> <!-- win-->
-        <div class="scissors  game"></div>
       </div>
       <div class="winner">
-        <h1 class="winner_h">YOU LOSE</h1>
-        <button class="winner_b">PLAY AGAIN</button>
+        <h1 class="winner_h"></h1>
+        <button class="winner_b" onclick="playAgain()">PLAY AGAIN</button>
       </div>
       <div class="computer">
-        <div class="spock  game"></div>
       </div>
     </div>
 
@@ -56,7 +53,7 @@
     <div class="rules_box">
       <div class="r_h">
         <h1>Rules Bonus</h1>
-        <img src="./../images/icon-close.svg" alt="close">
+        <img class="rules_close" src="./../images/icon-close.svg" alt="close">
       </div>
       <div class="r_main">
         <img src="./../images/image-rules-bonus.svg" alt="rules bonus">

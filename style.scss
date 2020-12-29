@@ -1,5 +1,38 @@
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 0px none #ffffff;
+    border-radius: 100px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #2f2e85;
+    border: 0px none #ffffff;
+    border-radius: 100px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
-.atrribution_div{width: calc(90vw - 15px); position: fixed ; bottom: 0px; left : 10px; color: black;}
+.atrribution_div{width: 100vw; position: absolute; bottom: 2vw; left : 10px; color: black;}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 *{
@@ -12,15 +45,15 @@ html{
 }
 body{
     position: relative;
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     overflow-x: hidden;
-    padding-bottom: 5rem;
+    box-sizing: content-box;
+    min-height: 768px;
+    height: 100vh;
 }
 .body-bg{
     position: absolute;
@@ -31,187 +64,230 @@ body{
     background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
 }
 header{
-    margin-top: 3rem;
-    position: relative;
+    margin-top: 2.95rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     width: 44rem;
+    height: 9.5rem;
+    padding: 0 1.5rem;
+    border-radius: .8rem;
+    align-items: center;
     border: 3px solid hsl(217, 16%, 45%);
-    border-radius: 1rem;
-    padding: .8rem 1.4rem .8rem 1.6rem;
-
-    img{
-        height: 100%;
-    }
     .score{
-        background-color: white;
-        width: 9.5rem;
-        border-radius: .8rem;
+        width: 9.2rem;
+        border-radius: .5rem;
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 7.4rem;
-        p{
+        background-color: white;;
+        .score_p{
             margin-top: 1rem;
-            margin-bottom: 0rem;
-            font-size: 1rem;
-            font-weight: 700;
-            color: hsl(229, 64%, 46%);
-            text-transform: uppercase;
-            letter-spacing: .13rem;
+            color : hsl(229, 64%, 46%);
+            letter-spacing: .15rem;
         }
         .score_js{
-            margin-top: -.3rem;
             font-size: 4rem;
-            color : hsl(229, 25%, 31%);
+            margin-top: -.3rem;
+            color: hsl(229, 25%, 31%);
         }
     }
 }
+@media only screen and (max-width: 750px){
+    header{width: 80vw;min-height: 8.3rem;padding: 1vw 4vw;
+        .score{width: 22vw;justify-content: center;
+            p{font-size: 3vw;margin-top: .5rem;}
+            h1{font-size: 10vw;margin-top: 0rem;}}}
+}
+@media only screen and (max-width: 550px){
+    header{
+        .score{width: 25vw;
+            p{font-size: 3.5vw;margin-top: 0rem;}
+            h1{font-size: 13vw;}}}
+}
+@media only screen and (max-width: 400px){
+    header{
+        .score{width: 30vw;
+            p{font-size: 5vw;}
+            h1{font-size: 15vw;}}}
+}
 main{
-    transform: scale(1);
-    margin-bottom: 5rem;
-    img{
-        position: relative;
-        margin-top: 10rem;
-        z-index: -2;
-    }
+    position: absolute;
+    top: 350px;
+    width: 305px;
+    height: 277px;
+    background-image: url("./images/bg-triangle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // visibility: hidden;
 }
 .game{
     position: absolute;
-    top: 4rem;
-    left: -5.5rem;
-    width: 200px;
-    height: 200px;
+    width: 197px;
     border-radius: 9in;
-    box-shadow: 0 10px 0px 0px hsl(230, 67%, 45%);
-    border: 20px solid hsl(230, 78%, 58%);
-    transform: scale(1);
-    transition: all .3 ease-in-out;
-
-    .ring-bg{
-        position: absolute; top: 0px;
-        width: 160px;
-        height: 160px;
+    height: 197px;
+    &::before{
+        position: absolute;
+        top:-1px;left: -1px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 9in;
         background-color: white;
-        z-index: -2;
-        border-radius: 9in;
-        box-shadow: inset 0px 16px 0px 0px rgb(214, 212, 212);
+        padding: 1px;
+        box-shadow: inset 0px 10px 0px 0px rgba(128, 128, 128, 0.445);
     }
-    .center{
-        position: relative;
-        top: -20px;
-        left: -20px;
-        z-index: 2;
-        width: 200px;
-        height: 210px;
-        background-image: url("./images/icon-paper.svg");
-        background-repeat: no-repeat;
-        background-size: 38%;
-        border-radius: 9in;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: 45%;
     }
 }
 .scissors{
-    left: 11.8rem;
-    box-shadow: 0 10px 0px 0px hsl(39, 91%, 35%);
-    border: 20px solid hsl(39, 89%, 49%);
-    .center{
+    top: -87px; left: 193px;
+    border: 22px solid hsl(39, 89%, 49%);
+    box-shadow: 0 10px 0px 0px hsl(39, 72%, 34%);
+    &::after{
         background-image: url("./images/icon-scissors.svg");
     }
 }
+.paper{
+    top: -87px; left:-85px;
+    border: 22px solid hsl(230, 89%, 65%);
+    box-shadow: 0 10px 0px 0px hsl(230, 61%, 48%);
+    &::after{
+        background-image: url("./images/icon-paper.svg");
+    }
+}
 .rock{
-    top: 18rem;
-    left: 3.4rem;
-    box-shadow: 0 10px 0px 0px hsl(349, 81%, 36%);
-    border: 20px solid hsl(349, 71%, 52%);
-    .center{
+    top: 140px; left:55px;
+    border: 22px solid hsl(349, 70%, 56%);
+    box-shadow: 0 10px 0px 0px hsl(349, 72%, 34%);
+    &::after{
         background-image: url("./images/icon-rock.svg");
     }
 }
-.choose{
+@media only screen and  (max-width: 550px){
+    main{width: 55.455vw;height: 50.364vw;}
+    .game{width: 35.818vw;height: 35.818vw;
+        &::before{box-shadow: inset 0px 1.818vw 0px 0px rgba(128, 128, 128, 0.445);}}
+    .scissors{top: -15.818vw; left: 35.091vw;border: 4vw solid hsl(39, 89%, 49%);box-shadow: 0 1.818vw 0px 0px hsl(39, 72%, 34%);}
+    .paper{top: -15.818vw; left:-15.455vw;border: 4vw solid hsl(230, 89%, 65%);box-shadow: 0 1.818vw 0px 0px hsl(230, 61%, 48%);}
+    .rock{top: 25.455vw; left:10vw;border: 4vw solid hsl(349, 70%, 56%);box-shadow: 0 1.818vw 0px 0px hsl(349, 72%, 34%);}
+}
+.fight{
     visibility: hidden;
     position: absolute;
-    width: 100%;
+    top: 260px;
+    min-width: 50rem;
     height: auto;
-    padding: 1rem 28vw; // 28vw 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    top: 23.8rem; left: 0;
+    padding-bottom: 4rem;
+    transition: all .3 ease-in-out;
+    .pic{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: .6rem 6.7rem 0 8.5rem;
+        justify-content: space-between;
+        
+        h1{
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+            color:white;
+        }
+    }
     .my,.computer{
         position: relative;
-        top: 0rem;
-        left: 0vw; // 47
+        width: 225px;
+        height: 225px;
         border-radius: 9in;
-        width: 225px; height: 225px;
         background-color: rgba(0, 0, 0, 0.2);
-        z-index: -2;
-        transition: all .3 ease-in-out;
-        .choose_h{
-            position: absolute;
-            top: -8.5rem;
-            left: 2rem;
-            z-index: 2;
-            color: white;
-            width :10rem;
-        }
+
         .game{
-            width: 290px; height: 290px;
-            top: -2rem;
-            left: -2rem;
+            position: relative;
+            top: -14%; left: -14%;
+            width: 128%;
+            height: 128%;
             border-width: 30px;
-    
-            .ring-bg{
-                position: absolute; top: 0px; left: 0px;
-                width: 230px;
-                height: 230px;
-                box-shadow: inset -5px 20px 0px 0px rgb(214, 212, 212);
-            }
-            .center{
-                top: 2px;left: 2px;
-                width: 225px;height: 225px;
-                background-size: 47%;
+            &::before{
+                box-shadow: inset 0px 15px 0px 0px rgba(128, 128, 128, 0.445);
             }
         }
+        .scissors{
+            box-shadow: 0 15px 0px 0px hsl(39, 72%, 34%);
+        }
+        .paper{
+            box-shadow: 0 15px 0px 0px hsl(230, 61%, 48%);
+        }
+        .rock{
+            box-shadow: 0 15px 0px 0px hsl(349, 72%, 34%);
+        }
+        .lizard{
+            box-shadow: 0 15px 0px 0px hsl(261, 61%, 43%);
+        }
+        .spock{
+            box-shadow: 0 15px 0px 0px hsl(189, 57%, 36%);
+        }
+    }
+    .my{
+        margin-top: 8.5rem;
+        margin-left: 6rem;  
     }
     .computer{
-        left: -.7rem;
-
-        .choose_h{
-            top: -8.5rem;
-            left: -1rem;
-            width :16rem;
-        }
+        margin-top: 8.5rem;
+        margin-right: 7rem;
+    }
+    .winner{
+        display: none;
     }
 }
-.choose{
-    transition: all .3 ease-in-out;
-    .finish{
-        display: none;
-        transition: all .3 ease-in-out;
-        position: relative;
-        text-align: center;
-        top: 0rem;
-        left: 0;
-        z-index: -2;
-        color: white;
-        width: auto;
-        text-align: center;
+
+.fight_end{
+    transition: all .3s ease-in-out;
+    width: 67.7rem;
+
+    .computer{
+        margin-top: 8.5rem;
+        margin-right: 7.3rem;
+    }
+    .winner{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         h1{
+            position: relative; top: 1.1rem;
             font-size: 3.5rem;
-            margin-bottom: .8rem;
+            color: white;
         }
         button{
             outline: none;
-            text-decoration: none;
             border: none;
-            background-color: white;
+            text-decoration: none;
+            position: relative; top: 1.8rem;
+            width: 13.5rem;
             border-radius: .5rem;
-            color : hsl(229, 64%, 46%);
-            width: 14rem;
             height: 3rem;
+            font-size: 1rem;
+            letter-spacing: .15rem;
+            color: hsl(229, 25%, 31%);
         }
     }
     .win{
@@ -219,6 +295,7 @@ main{
         &::before{
             content: '';
             position: absolute;
+            top: 0; left: 0;
             width: 100%;
             height: 100%;
             border-radius: 9in;
@@ -226,398 +303,134 @@ main{
         }
     }
 }
+@media only screen and (max-width: 1000px){
+    .fight_end{width: 100vw;
+        .my{margin-left: 6vw;}
+        .computer{margin-right: 6vw;}}
+}
+@media only screen and (max-width: 880px){
+    body{
+        padding-bottom: 25vw;
+    }
+    .fight{top: 260px;min-width: 100vw;
+        .pic{width: 100%;padding: .5rem 10vw 0 17vw;
+            h1{font-size: 3.5vw;}}
+        .my,.computer{margin-top: 15vw;width: 25.568vw;height: 25.568vw;}
+        .my{margin-left: 15vw;}
+        .my,.computer{
+            .game{top: -3.409vw; left: -3.409vw;border-width: 3.409vw;
+                &::before{box-shadow: inset 0px 1.705vw 0px 0px rgba(128, 128, 128, 0.445);}}
+            .scissors{box-shadow: 0 1.705vw 0px 0px hsl(39, 72%, 34%);}
+            .paper{box-shadow: 0 1.705vw 0px 0px hsl(230, 61%, 48%);}
+            .rock{box-shadow: 0 1.705vw 0px 0px hsl(349, 72%, 34%);}
+            .lizard{box-shadow: 0 1.705vw 0px 0px hsl(261, 61%, 43%);}
+            .spock{box-shadow: 0 1.705vw 0px 0px hsl(189, 57%, 36%);}}
+        .computer{margin-right: 15vw;}}
+    .fight_end{width: 100vw;
+        .computer{margin-right: 15vw;}
+        .my{margin-left: 15vw;}
+        .winner{top: 30vw; left: 0;transform: scale(1.2);
+            h1{font-size: 7vw;}
+            button{width: 30vw;height: 8vw;}}
+        .win{
+            &::before{box-shadow: 0px 0px 9.091vw 4.545vw #606e85;}}}
+}     
+@media only screen and (max-width: 700px){
+    body{padding-bottom: 15vw;}
+}    
+@media only screen and (max-width: 550px){
+    body{padding-bottom: 0vw;}
+}  
+@media only screen and (max-width: 450px){
+    body{padding-bottom: 3vw;}
+    .fight_end{
+        .winner{
+            h1{font-size: 7vw;}
+            button{width: 45vw;height: 12vw;}}}
+}  
 .btns{
-    position: absolute;
-    bottom: 5vw;
-    left: 0;
-    width: 100vw;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 5vw;
-
+    padding: 0 1rem;
+    position: absolute;
+    bottom: 2rem;
 
     button{
         width: 10rem;
         height: 3rem;
-        outline: none;
-        border: none;
-        color: white;
-        text-decoration: none;
-        border: 1px solid white;
-        background: none;
         border-radius: .5rem;
+        background-color: transparent;
+        border: 2px solid white;
+        text-align: center;
+        font-size: 1.5rem;
+        color: white;
     }
-    .btn_bonus{
+    .orginal{
         a{
+            text-align: center;
+            font-size: 1.5rem;
+            color: white;
             text-decoration: none;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: .1rem;
         }
-    }
-
-    .btn_rules{
-
-        h1{
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: .1rem;
-        }
-        
     }
 }
-.rules{
-    position: fixed;
-    top: 5vw;
-    left: 200vw; // 20vw
-    border-radius: .5rem;
+@media only screen and (max-width: 550px){
+    .btns{padding: 0 2vw;bottom: 1rem;
+        button{width: 30vw;height: 2.5rem;font-size: 4vw;}
+        .orginal{
+            a{font-size: 5vw;}}}
+}
+.rules_box{
     opacity: 0;
-    background-color: white;
-    width: 60vw;
+    position: fixed;
+    top: 2rem;
+    width: 50vw;
+    left: 200vw; //  25vw
     height: auto;
-
-    .r_header{
-        height: 3rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    background-color: white;
+    .r_h{
         width: 100%;
         display: flex;
         flex-direction: row;
-        padding: 1.5rem 2rem;
         justify-content: space-between;
-        
+        align-items: center;
         h1{
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: .1rem;
             color: black;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
         img{
-            width: 1.5rem;
-            height: 1.5rem;
+            margin-top: .5rem;
+            width: 2rem;
+            height: 2rem;
         }
     }
     .r_main{
+        box-sizing: border-box;
         width: 100%;
-        background-color: white;
-        padding: 2rem 0;
-        border-radius: .5rem;
-        text-align: center;
+        padding: 1rem;
         img{
-            height: 100%;
+            width: 80%;
+            max-width: 600px;
         }
     }
 }
-@media only screen and (max-width: 750px){
-    header{
-        width: 90vw;
-        img{
-            height: 80%;
-        }
-        .score{
-            width: 20vw;
-            height: 15vw;
-            p{
-                font-size: 2vw;
-            }
-            .score_js{
-                font-size: 8vw;
-            }
-        }
-    }
+@media only screen and (max-width: 900px){
+    .rules_box{top: 10vw;width: 80vw;padding: 2vw; // 10vw
+        .r_main{padding: 2vw;}}
 }
 @media only screen and (max-width: 600px){
-    header{
-        width: 90vw;
-        height: 8rem;
-        img{
-            height: 80%;
-        }
-        .score{
-            position: relative;
-            width: 23vw;
-            height: 100%;
-            p{
-                font-size:2.6vw;
-            }
-            .score_js{
-                position: absolute;
-                bottom: 5vw;
-                font-size: 8vw;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 750px){
-    main{
-        img{
-            position: relative;
-            margin-top: 25vw;
-            width: 50vw;
-        }
-    }
-    .game{
-        left: -15vw;
-        width: 30vw;
-        height: 30vw;
-        box-shadow: 0 8px 0px 0px hsl(230, 67%, 45%);
-        .ring-bg{
-            top: -.5vw;
-            left: -.5vw;
-            width: 25vw;
-            height: 25vw;
-            box-shadow: inset 0px 13px 0px 0px rgb(214, 212, 212);
-        }
-        .center{
-            top: -2.5vw;
-            left: -3.5vw;
-            width: 30vw;
-            height: 30vw;
-            background-size: 35%;
-        }
-    }
-    .scissors{
-        left: 37vw;
-        box-shadow: 0 8px 0px 0px hsl(39, 91%, 35%);
-    }
-    .rock{
-        top: 53vw;
-        left: 11vw;
-        box-shadow: 0 8px 0px 0px hsl(349, 81%, 36%);
-    }
-}
-@media only screen and (max-width: 400px){
-    main{
-        img{
-            margin-top: 30vw;
-        }
-    }
-    .game{
-        .ring-bg{
-            box-shadow: inset 0px 10px 0px 0px rgb(214, 212, 212);
-        }
-    }
-}
-@media only screen and (max-width: 600px){
-    .game{
-        border-width: 4vw;
-        .ring-bg{
-            top: -.25vw;
-            left: -.25vw;
-            width: 22.5vw;
-            height: 22.5vw;
-        }
-        .center{
-            top: 0vw;
-            left: 0vw;
-            width: 22.5vw;
-            height: 22.5vw;
-            background-size: 45%;
-        }
-    }
-}
-@media only screen and (max-width: 1250px){
-    .choose{
-        padding: 1rem 18vw; // 28vw 
-    }
-}
-@media only screen and (max-width: 1050px){
-    .choose{
-        padding: 1rem 18vw;
-        .my,.computer{
-            width: 21.5vw; height: 21.5vw;
-            .choose_h{
-                left: 0rem;
-                font-size: 4vw;
-                width :35vw;
-            }
-            .game{
-                width: 30vw; height: 30vw;
-                top: -5vw;
-                left: -5vw;
-                border-width: 3vw;
-            
-                .ring-bg{
-                    width:24.2vw;
-                    height: 24.2vw;
-                    box-shadow: inset 0px 14px 0px 0px rgb(214, 212, 212);
-                }
-                .center{
-                    top: 0vw;left: 0vw;
-                    width: 24vw;height: 24vw;
-                    background-size: 45%;
-                }
-            }
-        }
-        .computer{
-            .choose_h{
-                top: -8.5rem;
-                left: -5vw;
-            }
-        }
-    }
-    .choose{
-        .finish{
-            h1{
-                font-size:6vw;
-            }
-            button{
-                width: 20vw;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 700px){
-    .choose{
-        top: 18rem;
-        .my,.computer{
-            .choose_h{
-                top: -5rem;
-            }
-        }
-        .computer{
-            .choose_h{
-                top: -5rem;
-            }
-        }
-    }
-    .choose{
-        .finish{
-            position: absolute;
-            top: 35vw;
-            left: 30vw;
-            width: 40vw;
-            h1{
-                font-size: 7vw;
-            }
-            button{
-                width: 35vw;
-                height: 3rem;
-            }
-        }
-        .win{
-            transition: all .3s ease-in-out;
-            &::before{
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: 9in;
-                box-shadow: 0px 0px 10vw 3vw #606e85;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 400px){
-    .choose{
-        .my,.computer{
-            transform: scale(1.1);
-            .game{
-            
-                .ring-bg{
-                    position: absolute; top: -.25vw; left: -.25vw;
-                    width:24.5vw;
-                    height: 24.5vw;
-                    box-shadow: inset 0px 10px 0px 0px rgb(214, 212, 212);
-                }
-                .center{
-                    top: 0vw;left: 0vw;
-                    width: 24vw;height: 24vw;
-                    background-size: 45%;
-                }
-            }
-        }
-    }
-    .choose{
-        .finish{
-            top: 40vw;
-        }
-    }
-}
-@media only screen and (max-width: 1000px){
-    .rules{
-        top: 5vw; // left 15vw
-        width: 70vw;
-
-        .r_header{
-            padding: 2rem 2rem;
-            align-items: center;
-            h1{
-                font-size: 1.5rem;
-            }
-            img{
-                width: 2rem;
-                height: 2rem;
-            }
-        }
-        .r_main{
-            width: 100%;
-            background-color: white;
-            padding: 2rem 0;
-            border-radius: .5rem;
-            img{
-                width: 80%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 650px){
-    .rules{ // 10 vw left
-        width: 80vw;
-        .r_header{
-            padding: 5vw 3vw;
-            h1{
-                font-size: 3vw;
-            }
-            img{
-                width: 4vw;
-                height: 4vw;
-            }
-        }
-        .r_main{
-            padding: 5vw 0;
-            img{
-                width: 90%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 450px){
-    .btns{
-        button{
-            width: 35vw;
-            height: 2.5rem;
-        }
-        .btn_bonus{
-            a{
-                font-size: 5vw;
-            }
-        }
-        
-    }
-    .btn_rules{
-        h1{
-            font-size: 5vw;
-        }
-        .rules{
-            top: 15vw;// left 5 vw
-            width: 90vw;
-            .r_header{
-                h1{
-                    font-size: 5vw;
-                }
-                img{
-                    width: 5vw;
-                    height: 5vw;
-                }
-            }
-            .r_main{
-                padding: 5vw 5vw;
-                img{
-                    width: 100%;
-                }
-            }
-        }
-    }
+    .rules_box{top: 5vw;width: 90vw;padding: 3vw; // 5vw
+        .r_h{
+            h1{font-size: 6vw;}
+            img{width: 5vw;height: 5vw;}}
+        .r_main{padding: 3vw;
+            img{width: 100%;}}}
 }
