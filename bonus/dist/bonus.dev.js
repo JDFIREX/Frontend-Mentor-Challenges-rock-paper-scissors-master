@@ -275,6 +275,7 @@ function playAgain() {
     my.removeChild(my.children[0]);
     computer.removeChild(computer.children[0]);
     winner != "DRAW" ? winner.classList.remove("win") : null;
+    document.querySelector('.fight').classList.remove("fight_end");
     setTimeout(function () {
       gs.to(".main", 0, {
         rotate: -500,
